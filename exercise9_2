@@ -12,8 +12,6 @@ for line in fhand:
         for words in emails:       
             if words.find('@') != -1 :
                 emailAddresses[words] = emailAddresses.get(words,0) + 1
-            else:
-                continue
 print(emailAddresses)
 
 # splitting each line, into a list of strings, and each string is searched through for the character '@'. if found, the whole string is added to the dictionary
