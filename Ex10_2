@@ -1,0 +1,12 @@
+fhand = open("mbox-short.txt")
+emailAddresses = dict()
+for line in fhand:
+    if line.startswith("From"):
+        emails = line.split()     
+        for words in emails:       
+            if words.find(':') != -1 :
+                time = words.split(':')[0]
+                emailAddresses[time] = emailAddresses.get(time,0) + 1
+emailAddresses.pop('From', None)
+for key, value in emailAddresses.items():
+    print(key, value)
